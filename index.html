@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>T-Shirt Revolution :: Your favourite t-shirt reborn</title>
+    <style type="text/css" media="all">
+.container { max-width: 750px; }
+.jumbotron { text-align: center; background-color: #fff; }
+.jumbotron p { margin-top: 24px; }
+.jumbotron .btn { margin-top: 14px; padding: 14px 24px; font-size: 21px; }
+.bs-callout { padding: 20px; margin: 20px 0; border: 1px solid #eee; border-left-width: 5px; border-radius: 3px; background: #f9fff7; }
+.bs-callout-info { border-left-color: #419641; }
+.bs-callout-info h4 { color: #419641; }
+.product { cursor: pointer; }
+.center { text-align: center; }
+.product .price { text-align: center;}
+.hidden { display: none; }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+$(function() {
+  $(".hidden").hide().removeClass("hidden");
+  $("#convert").click(function() {
+    $("#product").slideDown();
+    $('html, body').animate({ scrollTop: $("#product").offset().top }, 2000);
+  });
+
+  $(".product").click(function() {
+    $("#form").slideDown();
+    $('html, body').animate({ scrollTop: $("#form").offset().top }, 2000);
+  });
+
+  $("#order").click(function() {
+    $("#convert").slideUp();
+    $("#form").slideUp();
+    $("#product").slideUp();
+    $("#success").slideDown();
+    $('html, body').animate({ scrollTop: $("#success").offset().top }, 2000);
+  });
+});
+    </script>
+  </head>
+
+  <body>
+    <header class="bs-docs-nav navbar navbar-static-top" id="top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">T-Shirt Revolution</a>
+        </div>
+        <nav class="collapse navbar-collapse" id="bs-navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Shipping</a> </li>
+            <li><a href="#">Cart</a> </li>
+            <li><a href="#">Logout</a> </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>T-Shirt Revolution</h1>
+        <p class="lead">Convert your favourite t-shirt into a special product that you going to use every day.</p>
+        <a class="btn btn-lg btn-success" href="#" role="button" id="convert">Convert</a>
+      </div>
+
+      <div class="selection hidden" id="product">
+        <p class="center">Choose what you'd like your t-shirt to be reborn as.</p>
+        <div class="row">
+          <div class="col-md-4 product">
+            <h3>Carry bag</h3>
+            <p>Your every day hand bag.</p>
+            <img src="bag.jpg" width="230" height="230" />
+            <h3 class="price">$30</h3>
+          </div>
+          <div class="col-md-4 product">
+            <h3>Cushion</h3>
+            <p>Every time you want to have a nap.</p>
+            <img src="cushion.jpg" width="230" height="230" />
+            <h3 class="price">$50</h3>
+          </div>
+          <div class="col-md-4 product">
+            <h3>Duvet cover</h3>
+            <p>Snuggle under your new duvet.</p>
+            <img src="duvet.jpg" width="230" height="230" />
+            <h3 class="price">$180</h3>
+          </div>
+        </div>
+      </div>
+
+      <form class="hidden" id="form">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Name" value="Jane Williams">
+        </div>
+        <div class="form-group">
+          <label for="street">Street</label>
+          <input type="text" class="form-control" id="street" placeholder="Street" value="1/142 Auckland Street">
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" id="city" placeholder="City" value="Wellington">
+        </div>
+        <button type="submit" class="btn btn-primary" id="order">Order</button>
+      </form>
+
+      <div class="bs-callout bs-callout-info hidden" id="success">
+        <h4 id="callout-progress-csp">Your order was successful, now send us your t-shirt</h4>
+        <p>Send it to the address below and you'll have your awesome gift in 24 hours</p>
+        <address>
+          <strong>T-shirt Revolution, Inc.</strong><br>
+          142 Wellington Street<br>
+          Auckland, 9410<br>
+          <abbr title="Phone">P:</abbr> 0210 456-7890
+        </address>
+      </div>
+    </div>
+  </body>
+</html>
