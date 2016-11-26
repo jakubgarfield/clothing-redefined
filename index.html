@@ -34,11 +34,10 @@ $(function() {
   });
 
   $("#order").click(function() {
-    $("#convert").slideUp();
     $("#form").slideUp();
     $("#product").slideUp();
+    $("#convert").slideUp();
     $("#success").slideDown();
-    $('html, body').animate({ scrollTop: $("#success").offset().top }, 2000);
   });
 });
     </script>
@@ -107,7 +106,7 @@ $(function() {
           <label for="city">City</label>
           <input type="text" class="form-control" id="city" placeholder="City" value="Wellington">
         </div>
-        <button type="submit" class="btn btn-primary" id="order">Order</button>
+        <a class="btn btn-primary" id="order">Order</a>
       </form>
 
       <div class="bs-callout bs-callout-info hidden" id="success">
